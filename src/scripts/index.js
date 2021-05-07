@@ -39,7 +39,6 @@ function renderData(data = dataDummy) {
 
 function onClickRestaurant() {
     let restaurant = document.getElementById('click_restaurant');
-    let home = document.getElementById('click_home');
     restaurant.addEventListener('click', function () {
         let restaurantTop = document.getElementById('restaurant').offsetTop;
         let restaurantLeft = document.getElementById('restaurant').offsetLeft;
@@ -47,7 +46,10 @@ function onClickRestaurant() {
         window.location.hash = 'restaurant';
         window.scroll({ behavior: 'smooth', left: 0, top: 600 });
     });
+}
 
+function onClickHome() {
+    let home = document.getElementById('click_home');
     home.addEventListener('click', function () {
         window.location.hash = 'home';
         window.scroll({ behavior: 'smooth', left: 0, top: 0 });
@@ -74,4 +76,5 @@ function openClosedHamburger() {
 
 renderData(dataDummy);
 onClickRestaurant();
+onClickHome();
 openClosedHamburger();
