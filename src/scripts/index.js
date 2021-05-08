@@ -20,16 +20,16 @@ function renderData(data = dataDummy) {
         data.restaurants.forEach(item => {
             menuRestoList.innerHTML += `
             <div class="menu_resto__card" id="${item.id}">
-                        <div class="menu_resto_list__image">
-                            <img src="${item.pictureId}" alt="${item.name}">
+                        <div class="menu_resto_list__image" tabIndex="0">
+                            <img src="${item.pictureId}" alt="image ${item.name}">
                         </div>
-                        <div class="menu_resto_list__city">
+                        <div class="menu_resto_list__city" tabIndex="0">
                             Kota, ${item.city}
                         </div>
                         <div class="menu_resto_list__content">
-                            <p>Rating: ${item.rating}</p>
-                            <p>${item.name}</p>
-                            <p>${item.description.slice(0, 105) + ' ...'}</p>
+                            <p tabIndex="0">Rating: ${item.rating}</p>
+                            <p tabIndex="0">${item.name}</p>
+                            <p tabIndex="0">${item.description.slice(0, 105) + ' ...'}</p>
                         </div>
             </div>
             `;
