@@ -168,6 +168,10 @@ nav ul li a {
     font-size: 1.4em;
     text-decoration: none;
     transition: .5s ease-in-out;
+    line-height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-block;
 }
 
 nav ul li a:hover {
