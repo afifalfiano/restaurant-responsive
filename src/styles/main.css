@@ -224,8 +224,8 @@ main {
 }
 
 .menu_resto_list__image {
-    height: 300px;
-    max-height: 300px;
+    max-height: 250px;
+    overflow: hidden;
     object-fit: cover;
 }
 
@@ -301,6 +301,10 @@ footer p {
 @media only screen and (max-width: 425px) {
     #hamburger {
         display: block;
+    }
+
+    .menu_resto_list__image {
+        max-height: 250px;
     }
     .not-found p {
         font-size: .8em;
@@ -417,6 +421,9 @@ footer p {
     #hamburger {
         display: none;
     }
+    .menu_resto_list__image {
+        max-height: 200px;
+    }
 
     .hero img {
         height: 700px;
@@ -455,6 +462,10 @@ footer p {
     }
     #hamburger {
         display: none;
+    }
+
+    .menu_resto_list__image {
+        max-height: 180px;
     }
 
     .information {
