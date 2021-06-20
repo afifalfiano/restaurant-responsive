@@ -3,7 +3,7 @@ import '../styles/main.css';
 import App from './views/app';
 
 const app = new App({
-  content: document.querySelector('main'),
+  content: document.querySelector('#mainContent'),
   button: document.querySelector('#hamburger'),
   drawer: document.querySelector('#drawer'),
 });

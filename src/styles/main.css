@@ -6,6 +6,12 @@
     --header-bg: #00adb5;
     --card: black;
 }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -227,6 +233,7 @@ main {
     padding: 0;
 }
 
+
 .menu_resto_list__image {
     max-height: 250px;
     overflow: hidden;
@@ -239,18 +246,20 @@ main {
     font-size: 1.3em;
 }
 
-.menu_resto_list__content p:nth-child(2) {
+.menu_resto_list__content a {
     font-weight: 500;
+    text-decoration: none;
     font-weight: bold;
     color: var(--header-bg);
     padding: 0px 0px 10px 0px;
+    margin-left: 0;
     font-size: 1.6em;
 }
 
 .menu_resto_list__content p:nth-child(3) {
     font-weight: 500;
     color: rgb(66 66 66);
-    padding: 0px 0px 20px 0px;
+    padding: 10px 0px 20px 0px;
     font-size: 1.2em;
     line-height: 1.2em;
 }
@@ -285,6 +294,8 @@ main {
 
 /* Footer */
 footer {
+    position: relative;
+    height: 100%;
     width: 100%;
     display: block;
     margin: 0;
@@ -292,6 +303,8 @@ footer {
 }
 
 footer p {
+    position: absolute;
+    width: 100%;
     padding: 20px;
     text-align: center;
     background-color: var(--footer);

@@ -18,6 +18,13 @@ class App {
       drawer: this._drawer,
       content: this._content,
     });
+  }
+
+  async renderPage() {
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    const page = routes[url];
+    this._content.innerHTML = await page.render();
+    await page.afterRender();
 
     const scroll = () => {
       const restaurant = document.getElementById('click_restaurant');
@@ -36,13 +43,6 @@ class App {
 
     scroll();
     backHome();
-  }
-
-  async renderPage() {
-    const url = UrlParser.parseActiveUrlWithCombiner();
-    const page = routes[url];
-    this._content.innerHTML = await page.render();
-    await page.afterRender();
   }
 }
 
