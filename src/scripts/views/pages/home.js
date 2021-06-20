@@ -20,15 +20,16 @@ const Home = {
         </div>
         `;
   },
+
+  async fetchRestaurantData() {
+    const url = 'https://restaurant-api.dicoding.dev/list';
+    const response = await fetch(url);
+    const restaurant = response.json();
+    return restaurant;
+  },
+
   async afterRender() {
-    const data = require('../../data/DATA.json');
-    const url = 'https://restaurant-api.dicoding.dev/';
-    fetch(url + 'list', { method: 'GET', headers: { 'X-Auth-Token': '12345' } }).then((response) => {
-      console.log(response);
-      return response.json();
-    }).catch((err) => {
-      console.error(err);
-    })
+    const data = await this.fetchRestaurantData();
     const menuRestoList = document.querySelector('.menu_resto__list');
     const notFound = document.getElementById('notfound');
     if (data.restaurants.length === 0) {
@@ -44,7 +45,7 @@ const Home = {
         menuRestoList.innerHTML += `
               <div class="menu_resto__card" id="${item.id}">
                           <div class="menu_resto_list__image" tabIndex="0">
-                              <img src="${item.pictureId}" alt="image ${item.name}">
+                              <img src="https://restaurant-api.dicoding.dev/images/small/${item.pictureId}" alt="image ${item.name}">
                           </div>
                           <div class="menu_resto_list__city" tabIndex="0">
                               Kota, ${item.city}

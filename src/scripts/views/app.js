@@ -36,13 +36,16 @@ class App {
     const backHome = () => {
       const home = document.getElementById('click_home');
       home.addEventListener('click', () => {
-        window.location.hash = 'home';
+        window.location.hash = '/home';
         window.scroll({ behavior: 'smooth', left: 0, top: 0 });
       });
     };
 
-    scroll();
-    backHome();
+    const { hash } = window.location;
+    if (hash === '' || hash === '#/home' || hash === '#restaurant') {
+      scroll();
+      backHome();
+    }
   }
 }
 
