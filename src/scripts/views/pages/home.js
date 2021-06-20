@@ -1,3 +1,5 @@
+import API_ENDPOINT from '../../globals/api-endpoint';
+
 const Home = {
 
   async render() {
@@ -22,8 +24,7 @@ const Home = {
   },
 
   async fetchRestaurantData() {
-    const url = 'https://restaurant-api.dicoding.dev/list';
-    const response = await fetch(url);
+    const response = await fetch(API_ENDPOINT.list);
     const restaurant = response.json();
     return restaurant;
   },
