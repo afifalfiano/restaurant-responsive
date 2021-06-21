@@ -191,10 +191,11 @@ nav ul li a:hover {
 /* Main */
 
 main {
-    position: relative;
+    position: absolute;
     width: 100%;
     height: auto;
     margin-bottom: 2em;
+    top: 80px;
 }
 
 .not-found {
@@ -292,10 +293,138 @@ main {
     padding: 10px 20px 10px 20px;
 }
 
+
+/* Breadcrumb Detail */
+.breadcrumb {
+    padding: 30px;
+    font-size: 20px;
+}
+
+.image-restaurant {
+    width: 100%;
+    display: flex;
+    background: transparent;
+    max-width: 100%;
+    position: relative;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.image-restaurant p {
+    color: #fff;
+    font-size: 4em;
+    font-weight: bold;
+    position: absolute;
+    opacity: 1;
+    z-index: 99;
+}
+
+.image-restaurant span {
+    position: absolute;
+    transform: translateY(60px);
+    font-size: 20px;
+    color: #ff9800;
+    font-weight: 400;
+    z-index: 99;
+    background: #fff;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+.image-restaurant img {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    opacity: .8;
+}
+
+.resto-name {
+    position: absolute;
+    top:0;
+    left: 0;
+}
+
+.menus {
+    display: grid;
+    grid-template-columns: 2;
+    grid-template-rows: 2;
+}
+
+.category {
+    grid-column-start: 1;
+    width: 100%;
+    text-align: center;
+}
+
+.menus-resto {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+.drink {
+    padding: 20px;
+}
+
+.food {
+    padding: 20px;
+}
+
+.rating {
+    position: absolute;
+    top: 0;
+    z-index: 99;
+    color: #fff;
+    padding: 10px;
+    background-color: #01acb5;
+    border-radius: 10px 0 0 0;
+}
+
+.review {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.user {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card {
+    height: auto;
+    background: gray;
+    padding: 10px;
+    max-width: 30%;
+    border-radius: 5px;
+    width: 100%;
+    margin: 10px;
+    box-shadow: 2px 2px 6px 0px rgb(0 0 0 / 40%);
+}
+
+.review > div{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 30px;
+    justify-content: center;
+}
+
+.content {
+    padding-top: 10px;
+}
+
+/* End Breadcrumb */
+
 /* Footer */
 footer {
+    margin-top: auto;
     position: relative;
-    height: 100%;
+    bottom: 0;
+    margin-top: 200px;
     width: 100%;
     display: block;
     margin: 0;
@@ -303,7 +432,6 @@ footer {
 }
 
 footer p {
-    position: absolute;
     width: 100%;
     padding: 20px;
     text-align: center;

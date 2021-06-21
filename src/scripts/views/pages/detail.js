@@ -4,12 +4,12 @@ const Detail = {
 
   async render() {
     return `
-          <div style="padding: 10em;">
-          <h1>
+          <div class="breadcrumb">
+          <p>
               Detail Page
-              <div class="detail-content"><div>
-          </h1>
+          </p>
           </div>
+          <div class="detail-content"><div>
           `;
   },
   async fetchRestoDetail() {
@@ -24,24 +24,31 @@ const Detail = {
     console.log(restaurant, 'data');
     const menuRestoList = document.querySelector('.detail-content');
     menuRestoList.innerHTML += `
+    <div class="image-restaurant">
+    <p>${restaurant.name}</p>
+    <span>${restaurant.address}</span> 
     <div>
-    <img src=${restaurant.pictureId}/>
+    <div class="rating">Rating: ${restaurant.rating}</div>
+    <img src='https://restaurant-api.dicoding.dev/images/medium/${restaurant.pictureId}' alt="${restaurant.name}" width="100%"/>
     </div>
-    <div>
-      <p>Alamat: ${restaurant.address}</p>
     </div>
+
+    <div class="menus">
     <div class="category">
       <p>Kategori Menu: </p>
     </div>
+
+    <div class="menus-resto">
     <div class="food">
     <p>Menu Makan: </p>
     </div>
+    
     <div class="drink">
       <p>Menu Minuman: </p>
     </div>
-    <div>
-      <p>Rating: ${restaurant.rating}</p>
     </div>
+    </div>
+
     <div class="review">
       <p>Customer Reviews:</p>
     </div>
@@ -63,27 +70,31 @@ const Detail = {
     });
     restaurant.menus.drinks.forEach((item) => {
       divDrink.innerHTML += `
-        ${item.name}
+        <ul><li>${item.name}</li></ul>
       `;
     });
     restaurant.menus.foods.forEach((item) => {
       divFood.innerHTML += `
-        ${item.name}
+      <ul><li>${item.name}</li></ul>
       `;
     });
     restaurant.customerReviews.forEach((item) => {
       divReview.innerHTML += `
-        ${item.name} - ${item.date}
-        Review: ${item.review}
+        <div class="card">
+        <div class="user">
+        <div>${item.name}</div>
+        <div>${item.date}</div>
+        </div>
+        <div class="content">
+        <div>${item.review}</div>
+        </div>
+        </div>
       `;
     });
-
-
     category.appendChild(divCategory);
     drink.appendChild(divDrink);
     food.appendChild(divFood);
     review.appendChild(divReview);
-
   },
 };
 
