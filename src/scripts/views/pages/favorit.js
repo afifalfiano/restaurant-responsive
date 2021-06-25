@@ -10,7 +10,7 @@ const Favorite = {
         `;
   },
   async afterRender() {
-    
+
   },
 };
 

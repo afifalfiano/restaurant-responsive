@@ -20,7 +20,7 @@ const Detail = {
   },
 
   async afterRender() {
-    const {restaurant} = await this.fetchRestoDetail();
+    const { restaurant } = await this.fetchRestoDetail();
     console.log(restaurant, 'data');
     const menuRestoList = document.querySelector('.detail-content');
     menuRestoList.innerHTML += `
