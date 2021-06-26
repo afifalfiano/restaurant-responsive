@@ -1,9 +1,9 @@
+import uuid from 'uuid';
 import API_ENDPOINT from '../../globals/api-endpoint';
 import { createLikeButtonTemplate, createRestoDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';
 import UrlParser from '../../routes/url-parser';
 import Config from '../../globals/config';
-import uuid from 'uuid';
 
 const Detail = {
 
@@ -104,6 +104,7 @@ const Detail = {
       const data = await this.postData(id, name, reviews);
       if (data.status === 200) {
         this.afterRender();
+        alert('Berhasil menambahkan review restaurant');
       }
     });
   },

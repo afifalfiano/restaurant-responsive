@@ -30,6 +30,7 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
       await RestoDatabase.putResto(this._resto);
+      alert('Resto berhasil disimpan dihalaman favorit');
       this._renderButton();
     });
   },
@@ -40,6 +41,7 @@ const LikeButtonInitiator = {
     const likeButton = document.querySelector('#likeButton');
     likeButton.addEventListener('click', async () => {
       await RestoDatabase.deleteResto(this._resto.id);
+      alert('Resto berhasil dihapus dari halaman favorit');
       this._renderButton();
     });
   },

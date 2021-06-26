@@ -44,8 +44,8 @@ class App {
     const { hash } = window.location;
     if (hash === '' || hash === '#/home' || hash === '#restaurant') {
       scroll();
-      backHome();
     }
+    backHome();
   }
 }
 

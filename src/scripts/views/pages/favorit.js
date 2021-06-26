@@ -14,7 +14,6 @@ const Favorite = {
 
   async afterRender() {
     const data = await RestoDatabase.getAllResto();
-    console.log(data, 'log db');
     const menuRestoList = document.querySelector('.menu_resto__list');
     data.forEach((item) => {
       menuRestoList.innerHTML += createRestoItemTemplate(item);
