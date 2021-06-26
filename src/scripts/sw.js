@@ -28,6 +28,14 @@ workbox.routing.registerRoute(
 );
 
 workbox.routing.registerRoute(
+  /^https:\/\/use\.fontawesome\.com/,
+  workbox.strategies.staleWhileRevalidate({
+    cacheName: 'use-fontawesome',
+  }),
+);
+
+
+workbox.routing.registerRoute(
   /^https:\/\/fonts\.gstatic\.com/,
   workbox.strategies.cacheFirst({
     cacheName: 'google-fonts-webfonts',
