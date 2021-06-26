@@ -1,48 +1,17 @@
-const CACHE_NAME = 'resto-v1';
-const urlsToCache = [
-  '/',
-  '/index.html',
-  'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap',
-  '/manifest.json',
-  '/icon.png',
-  '/apple-icon-180x180.png',
-  '/icon/icon-512x512.png',
-
-];
-
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(urlsToCache)),
-  );
-});
-
-self.addEventListener('fetch', (event) => {
-  const base_url = 'https://restaurant-api.dicoding.dev/';
-
-  if (event.request.url.indexOf(base_url) > -1) {
-    event.respondWith(
-      caches.open(CACHE_NAME).then((cache) => fetch(event.request).then((response) => {
-        cache.put(event.request.url, response.clone());
-        return response;
-      })),
-    );
-  } else {
-    event.respondWith(
-      caches.match(event.request, { ignoreSearch: true }).then((response) => response || fetch(event.request)),
-    );
-  }
-});
-
-self.addEventListener('activate', (event) => {
-  event.waitUntil(
-    caches.keys()
-      .then((cacheNames) => Promise.all(
-        cacheNames.map((cacheName) => {
-          if (cacheName != CACHE_NAME) {
-            console.log(`ServiceWorker: cache ${cacheName} dihapus`);
-            return caches.delete(cacheName);
-          }
-        }),
-      )),
-  );
-});
+var serviceWorkerOption = {
+  "assets": [
+    "/bundle.js",
+    "/apple-icon-180x180.png",
+    "/favicon.ico",
+    "/favicon.png",
+    "/manifest.json",
+    "/icon/icon-192x192.png",
+    "/icon/icon-256x256.png",
+    "/icon/icon-384x384.png",
+    "/icon/icon-512x512.png",
+    "/images/heros/hero-image_2-min.jpg",
+    "/index.html"
+  ]
+};
+        
+        !function(e){var o={};function t(n){if(o[n])return o[n].exports;var r=o[n]={i:n,l:!1,exports:{}};return e[n].call(r.exports,r,r.exports,t),r.l=!0,r.exports}t.m=e,t.c=o,t.d=function(e,o,n){t.o(e,o)||Object.defineProperty(e,o,{enumerable:!0,get:n})},t.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},t.t=function(e,o){if(1&o&&(e=t(e)),8&o)return e;if(4&o&&"object"==typeof e&&e&&e.__esModule)return e;var n=Object.create(null);if(t.r(n),Object.defineProperty(n,"default",{enumerable:!0,value:e}),2&o&&"string"!=typeof e)for(var r in e)t.d(n,r,function(o){return e[o]}.bind(null,r));return n},t.n=function(e){var o=e&&e.__esModule?function(){return e.default}:function(){return e};return t.d(o,"a",o),o},t.o=function(e,o){return Object.prototype.hasOwnProperty.call(e,o)},t.p="",t(t.s=0)}([function(e,o,t){(function(e){e.serviceWorkerOption.assets;importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js"),workbox?console.log("Workbox berhasil dimuat"):console.log("Workbox gagal dimuat"),workbox.precaching.precacheAndRoute([{url:"/index.html",revision:"1"},{url:"/manifest.json",revision:"1"},{url:"/bundle.js",revision:"1"},{url:"/favicon.ico",revision:"1"},{url:"/favicon.png",revision:"1"},{url:"/icon/icon-192x192.png",revision:"1"},{url:"/icon/icon-256x256.png",revision:"1"},{url:"/icon/icon-384x384.png",revision:"1"},{url:"/icon/icon-512x512.png",revision:"1"},{url:"/apple-icon-180x180.png",revision:"1"},{url:"/images/heros/hero-image_2-min.jpg",revision:"1"}]),workbox.routing.registerRoute(/\.(?:png|gif|jpg|jpeg|svg|ico)$/,workbox.strategies.cacheFirst()),workbox.routing.registerRoute(new RegExp("/pages/"),workbox.strategies.staleWhileRevalidate({cacheName:"pages",plugins:[new workbox.expiration.Plugin({maxEntries:60,maxAgeSeconds:2592e3})]})),workbox.routing.registerRoute(/^https:\/\/fonts\.googleapis\.com/,workbox.strategies.staleWhileRevalidate({cacheName:"google-fonts-stylesheets"})),workbox.routing.registerRoute(/^https:\/\/fonts\.gstatic\.com/,workbox.strategies.cacheFirst({cacheName:"google-fonts-webfonts",plugins:[new workbox.cacheableResponse.Plugin({statuses:[0,200]}),new workbox.expiration.Plugin({maxAgeSeconds:31536e3,maxEntries:30})]})),workbox.routing.registerRoute(/^https:\/\/restaurant-api\.dicoding\.dev/,workbox.strategies.staleWhileRevalidate({cacheName:"dataRestaurant"}))}).call(this,t(1))},function(e,o){function t(e){return(t="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e})(e)}var n;n=function(){return this}();try{n=n||new Function("return this")()}catch(e){"object"===("undefined"==typeof window?"undefined":t(window))&&(n=window)}e.exports=n}]);

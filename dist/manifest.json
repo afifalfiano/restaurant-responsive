@@ -1,11 +1,12 @@
 {
+    "name": "Search Resto",
+    "short_name": "Resto",
     "theme_color": "#00adb5",
     "background_color": "#00adb5",
     "display": "standalone",
     "scope": "/",
     "start_url": "/index.html",
-    "name": "Search Resto",
-    "short_name": "Resto",
+    "prefer_related_applications": true,
     "description": "Search Restaurant",
     "icons": [
         {

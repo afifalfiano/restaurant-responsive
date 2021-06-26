@@ -1,47 +1,23 @@
 // eslint-disable-next-line no-undef
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
 
+// eslint-disable-next-line no-undef
 if (workbox) {
   console.log('Workbox berhasil dimuat');
 } else {
   console.log('Workbox gagal dimuat');
 }
 
+// eslint-disable-next-line no-undef
 workbox.precaching.precacheAndRoute([
-  { url: '/nav.html', revision: '1' },
   { url: '/index.html', revision: '1' },
-  { url: '/tim.html', revision: '1' },
-  { url: '/css/materialize.min.css', revision: '1' },
-  { url: '/css/index.css', revision: '1' },
-  { url: '/css/page.css', revision: '1' },
-  { url: '/js/materialize.min.js', revision: '1' },
-  { url: '/js/api.js', revision: '1' },
-  { url: '/js/db.js', revision: '1' },
-  { url: '/js/idb.js', revision: '1' },
-  { url: '/js/index.js', revision: '1' },
-  { url: '/js/nav.js', revision: '1' },
-  { url: '/js/tim.js', revision: '1' },
-  { url: '/js/register_tim.js', revision: '1' },
-  { url: '/js/register_index.js', revision: '1' },
   { url: '/manifest.json', revision: '1' },
+  { url: '/bundle.js', revision: '1' },
 ]);
 
 workbox.routing.registerRoute(
-  /\.(?:png|gif|jpg|jpeg|svg|ico)$/,
+  /\.(?:png|gif|jpg|jpeg|svg|ico|js)$/,
   workbox.strategies.cacheFirst(),
-);
-
-workbox.routing.registerRoute(
-  new RegExp('/pages/'),
-  workbox.strategies.staleWhileRevalidate({
-    cacheName: 'pages',
-    plugins: [
-      new workbox.expiration.Plugin({
-        maxEntries: 60,
-        maxAgeSeconds: 30 * 24 * 60 * 60, // 30 hari
-      }),
-    ],
-  }),
 );
 
 workbox.routing.registerRoute(
@@ -70,7 +46,6 @@ workbox.routing.registerRoute(
 workbox.routing.registerRoute(
   /^https:\/\/restaurant-api\.dicoding\.dev/,
   workbox.strategies.staleWhileRevalidate({
-    cacheName: 'dataFootball',
+    cacheName: 'dataRestaurant',
   }),
 );
-// https://restaurant-api.dicoding.dev/
