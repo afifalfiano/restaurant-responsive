@@ -1,4 +1,5 @@
 import API_ENDPOINT from '../../globals/api-endpoint';
+import { createRestoItemTemplate } from '../templates/template-creator';
 
 const Home = {
 
@@ -32,35 +33,10 @@ const Home = {
   async afterRender() {
     const data = await this.fetchRestaurantData();
     const menuRestoList = document.querySelector('.menu_resto__list');
-    const notFound = document.getElementById('notfound');
-    if (data.restaurants.length === 0) {
-      const element = document.createElement('div');
-      element.innerHTML += `
-          <div class="not-found">
-              <p>Restaurant Not Found...</p>
-          </div>
-          `;
-      notFound.appendChild(element);
-    } else {
-      data.restaurants.forEach((item) => {
-        menuRestoList.innerHTML += `
-              <div class="menu_resto__card" id="${item.id}">
-                          <div class="menu_resto_list__image" tabIndex="0">
-                              <img src="https://restaurant-api.dicoding.dev/images/small/${item.pictureId}" alt="image ${item.name}">
-                          </div>
-                          <div class="menu_resto_list__city" tabIndex="0">
-                              Kota, ${item.city}
-                          </div>
-                          <div class="menu_resto_list__content">
-                              <p tabIndex="0">Rating: ${item.rating}</p>
-                              <a  href="/#/detail/${item.id}" tabIndex="0">${item.name}</a>
-                              <p tabIndex="0">${`${item.description.slice(0, 105)} ...`}</p>
-                          </div>
-              </div>
-              `;
-      });
-    }
+    data.restaurants.forEach((item) => {
+      menuRestoList.innerHTML += createRestoItemTemplate(item);
+    });
   },
-};
 
+};
 export default Home;
