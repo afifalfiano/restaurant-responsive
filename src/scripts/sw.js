@@ -1,14 +1,14 @@
-// eslint-disable-next-line no-undef
+/* eslint-disable no-undef */
+import 'regenerator-runtime';
+
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js');
 
-// eslint-disable-next-line no-undef
 if (workbox) {
   console.log('Workbox berhasil dimuat');
 } else {
   console.log('Workbox gagal dimuat');
 }
 
-// eslint-disable-next-line no-undef
 workbox.precaching.precacheAndRoute([
   { url: '/index.html', revision: '1' },
   { url: '/manifest.json', revision: '1' },
@@ -33,7 +33,6 @@ workbox.routing.registerRoute(
     cacheName: 'use-fontawesome',
   }),
 );
-
 
 workbox.routing.registerRoute(
   /^https:\/\/fonts\.gstatic\.com/,

@@ -1,4 +1,3 @@
-import uuid from 'uuid';
 import API_ENDPOINT from '../../globals/api-endpoint';
 import { createLikeButtonTemplate, createRestoDetailTemplate } from '../templates/template-creator';
 import LikeButtonInitiator from '../../utils/like-button-initiator';

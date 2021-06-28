@@ -221,7 +221,9 @@ main {
 .menu_resto__title {
     text-align: center;
     padding: 20px;
+    min-width: 44px;
     font-size: 2.5em;
+    min-height: 44px;
 }
 
 .menu_resto__list {
@@ -256,8 +258,10 @@ main {
     font-weight: 500;
     text-decoration: none;
     font-weight: bold;
+    min-height: 44px;
+    display: block;
+    min-width: 44px;
     color: var(--header-bg);
-    padding: 0px 0px 10px 0px;
     margin-left: 0;
     font-size: 1.6em;
 }
@@ -265,14 +269,18 @@ main {
 .menu_resto_list__content p:nth-child(3) {
     font-weight: 500;
     color: rgb(66 66 66);
-    padding: 10px 0px 20px 0px;
+    padding: 0px 0px 20px 0px;
     font-size: 1.2em;
     line-height: 1.2em;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 #newReview  {
     border: none;
     padding: 10px;
+    min-width: 44px;
+    min-height: 44px;
     margin: 10px;
     background: var(--header-bg);
     color: var(--white);
@@ -291,6 +299,8 @@ main {
 .menu_resto_list__city {
     color: var(--white);
     position: absolute;
+    min-height: 44px;
+    min-width: 44px;
     top: 0;
     font-size: 1.2em;
     left: 0;
@@ -329,6 +339,8 @@ main {
     padding: 10px 35px;
     border-radius: 0 50px;
     color: white;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .image-restaurant {
@@ -355,14 +367,16 @@ main {
 
 .image-restaurant span {
     position: absolute;
-    transform: translateY(60px);
+    transform: translateY(70px);
     font-size: 20px;
     color: #ff9800;
     font-weight: 400;
+    min-height: 44px;
+    min-width: 44px;
     z-index: 99;
     background: #fff;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 10px 10px;
 }
 
 .image-restaurant img {
@@ -390,13 +404,14 @@ main {
     text-align: center;
     font-size: 25px;
     font-weight: bold;
+    margin-bottom: 20px;
 }
 
 .menus-resto {
     display: flex;
     width: 100%;
+    margin-bottom: 20px;
     justify-content: center;
-    column-gap: 30px;
 }
 
 .like {
@@ -427,16 +442,40 @@ main {
 }
 
 .drink {
-    padding: 20px;
+    background: orange;
+    border-radius: 5px;
+    width: 30%;
+    line-height: 30px;
+    margin: 10px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 30px;
 }
 
 .food {
-    padding: 20px;
+    background: #cddc39;
+    border-radius: 5px;
+    width: 30%;
+    line-height: 30px;
+    margin: 10px;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 30px;
 }
+
+.food > p, .drink > p {
+    font-size: 22px;
+    font-weight: bold;
+    position: relative;
+    transform: translate(-15px, -5px);
+}
+
 
 .rating {
     position: absolute;
-    top: 0;
+    min-height: 44px;
+    min-width: 44px;
+    top: 5px;
     z-index: 99;
     color: #fff;
     padding: 10px;
@@ -453,9 +492,15 @@ main {
     align-items: center;
 }
 
+.review > p {
+    margin-bottom: 10px;
+}
+
 .user {
     display: flex;
     justify-content: space-between;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 .card {
@@ -464,7 +509,7 @@ main {
     padding: 10px;
     color: white;
     font-size: 18px;
-    max-width: 30%;
+    max-width: 40%;
     border-radius: 5px;
     width: 100%;
     margin: 10px;
@@ -480,6 +525,8 @@ main {
 
 .content {
     padding-top: 10px;
+    min-width: 44px;
+    min-height: 44px;
 }
 
 /* End Breadcrumb */
@@ -515,6 +562,15 @@ footer p {
 
     section {
         transform: translateY(-10px);
+    }
+
+    .food, .drink {
+        width: 100%;
+    }
+
+    .food > p, .drink > p {
+        text-align: center;
+        transform: translate(0);
     }
 
     .menu_resto_list__image {
@@ -640,6 +696,8 @@ footer p {
         border-radius: 0 50px 0 0;
         display: inline-block;
         margin: 5px 0px 10px;
+        min-height: 44px;
+        min-width: 44px;
     }
 
     .user {
