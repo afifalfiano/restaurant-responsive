@@ -1,7 +1,7 @@
 const createRestoDetailTemplate = (item) => `
 <div class="image-restaurant">
 <p>${item.name}</p>
-<span>${item.address}</span> 
+<span>${item.address} - ${item.city}</span> 
 <div>
 <div class="rating">Rating: ${item.rating}</div>
 <img src='https://restaurant-api.dicoding.dev/images/medium/${item.pictureId}' alt="${item.name}" width="100%"/>

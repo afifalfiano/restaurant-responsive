@@ -475,7 +475,7 @@ main {
     position: absolute;
     min-height: 44px;
     min-width: 44px;
-    top: 5px;
+    top: 0;
     z-index: 99;
     color: #fff;
     padding: 10px;
@@ -728,6 +728,26 @@ footer p {
     nav ul li a{
         font-size: 1.2em;
     }
+}
+
+@media screen and (max-width: 320px) {
+    .menus-resto {
+        max-width: 320px;
+    }
+
+    footer {
+        max-width: 320px;
+    }
+
+    header {
+        max-width: 320px;
+    }
+
+    .image-restaurant p {
+        transform: translateY(-5px);
+    }
+
+
 }
 
 
