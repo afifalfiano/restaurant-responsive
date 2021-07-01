@@ -715,10 +715,28 @@ footer p {
     header {
         align-items: center;
     }
+
+    .menu_resto__list {
+        grid-template-columns: 1fr 1fr !important;
+    }
     .header__title a {
         font-size: 1.6em;
         width: 150px;
         max-width: 150px;
+    }
+
+    .hero {
+        height: 400px;
+    }
+
+    .information {
+        transform: translate(30%, 7%);
+        font-size: 10px;
+        text-align: center;
+    }
+
+    .information button {
+        margin: 0;
     }
 
     nav ul {
