@@ -596,11 +596,16 @@ footer p {
         transform: translate(0, 0);
     }
     #hamburger {
+        min-height: 44px;
         display: flex;
         justify-content: center;
         align-items: center;
         top: 0;
         right: 0;
+        border: 0;
+        display: block;
+        background: none;
+        min-width: 44px;
         font-size: 32px;
         text-decoration: none;
         color: var(--white);

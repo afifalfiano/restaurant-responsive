@@ -12,6 +12,7 @@ const DrawerInitiator = {
   _toggleDrawer(event, drawer) {
     event.stopPropagation();
     drawer.classList.toggle('open');
+    event.preventDefault();
   },
 
   _closeDrawer(event, drawer) {
