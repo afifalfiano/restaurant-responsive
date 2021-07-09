@@ -8,6 +8,11 @@ const createRestoDetailTemplate = (item) => `
 </div>
 </div>
 
+<div class="desc">
+<h2>Tentang Restaurant</h2>
+<p>${item.description}</p>
+</div>
+
 <div class="menus">
 <div class="category">
   <p>Kategori Menu: </p>
