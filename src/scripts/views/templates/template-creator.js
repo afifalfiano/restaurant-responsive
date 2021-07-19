@@ -6,7 +6,7 @@ const createRestoDetailTemplate = (item) => `
 <div class="rating">Rating: ${item.rating}</div>
 <picture>
 <source media="(max-width: 600px)" srcset="https://restaurant-api.dicoding.dev/images/medium/${item.pictureId}">
-<img src='https://restaurant-api.dicoding.dev/images/medium/${item.pictureId}' alt="${item.name}" width="100%"/>
+<img class="lazyload" src='https://restaurant-api.dicoding.dev/images/medium/${item.pictureId}' alt="${item.name}" width="100%"/>
 </picture>
 </div>
 </div>
@@ -43,7 +43,7 @@ const createRestoItemTemplate = (item) => `
                           <div class="menu_resto_list__image" tabIndex="0">
                           <picture>
                               <source media="(max-width: 600px)" srcset="https://restaurant-api.dicoding.dev/images/small/${item.pictureId}">
-                              <img src="https://restaurant-api.dicoding.dev/images/small/${item.pictureId}" alt="image ${item.name}">
+                              <img class="lazyload" src="https://restaurant-api.dicoding.dev/images/small/${item.pictureId}" alt="image ${item.name}">
                           </picture>
                           </div>
                           <div class="menu_resto_list__city" tabIndex="0">
