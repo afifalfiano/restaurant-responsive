@@ -4,7 +4,10 @@ const createRestoDetailTemplate = (item) => `
 <span>${item.address} - ${item.city}</span> 
 <div>
 <div class="rating">Rating: ${item.rating}</div>
+<picture>
+<source media="(max-width: 600px)" srcset="https://restaurant-api.dicoding.dev/images/medium/${item.pictureId}">
 <img src='https://restaurant-api.dicoding.dev/images/medium/${item.pictureId}' alt="${item.name}" width="100%"/>
+</picture>
 </div>
 </div>
 
@@ -38,7 +41,10 @@ const createRestoDetailTemplate = (item) => `
 const createRestoItemTemplate = (item) => `
 <div class="menu_resto__card" id="${item.id}">
                           <div class="menu_resto_list__image" tabIndex="0">
+                          <picture>
+                              <source media="(max-width: 600px)" srcset="https://restaurant-api.dicoding.dev/images/small/${item.pictureId}">
                               <img src="https://restaurant-api.dicoding.dev/images/small/${item.pictureId}" alt="image ${item.name}">
+                          </picture>
                           </div>
                           <div class="menu_resto_list__city" tabIndex="0">
                               Kota, ${item.city}
@@ -52,13 +58,13 @@ const createRestoItemTemplate = (item) => `
   `;
 
 const createLikeButtonTemplate = () => `
-  <button aria-label="like this movie" id="likeButton" class="like">
+  <button aria-label="like this resto" id="likeButton" class="like">
      <i class="fa fa-heart-o" aria-hidden="true"></i>
   </button>
 `;
 
 const createLikedButtonTemplate = () => `
-  <button aria-label="unlike this movie" id="likeButton" class="like">
+  <button aria-label="unlike this resto" id="likeButton" class="like">
     <i class="fa fa-heart" aria-hidden="true"></i>
   </button>
 `;

@@ -15,6 +15,9 @@ const Favorite = {
   async afterRender() {
     const data = await RestoDatabase.getAllResto();
     const menuRestoList = document.querySelector('.menu_resto__list');
+    if (data.length === 0) {
+      menuRestoList.innerHTML += '<p>Tidak ada daftar favorit restaurant</p>';
+    }
     data.forEach((item) => {
       menuRestoList.innerHTML += createRestoItemTemplate(item);
     });

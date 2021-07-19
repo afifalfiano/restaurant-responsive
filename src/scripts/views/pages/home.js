@@ -7,7 +7,10 @@ const Home = {
     return `
       <section>
           <div class="hero">
+          <picture>
+              <source media="(max-width: 600px)" srcset="../images/heros/hero-image_2-min.jpg">
               <img src="../images/heros/hero-image_2-min.jpg" alt="Hero Images 2">
+          </picture>
           </div>
           <div class="information">
               <h1 tabindex="0">Choose Best Food Now!</h1>
