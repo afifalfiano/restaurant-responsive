@@ -5,8 +5,8 @@ const createRestoDetailTemplate = (item) => `
 <div>
 <div class="rating">Rating: ${item.rating}</div>
 <picture>
-<source media="(max-width: 600px)" srcset="https://restaurant-api.dicoding.dev/images/medium/${item.pictureId}">
-<img class="lazyload" src='https://restaurant-api.dicoding.dev/images/medium/${item.pictureId}' alt="${item.name}" width="100%"/>
+<source media="(max-width: 600px)" data-srcset="https://restaurant-api.dicoding.dev/images/medium/${item.pictureId}">
+<img class="lazyload" data-src='https://restaurant-api.dicoding.dev/images/medium/${item.pictureId}' alt="${item.name}" width="100%"/>
 </picture>
 </div>
 </div>
@@ -42,8 +42,8 @@ const createRestoItemTemplate = (item) => `
 <div class="menu_resto__card" id="${item.id}">
                           <div class="menu_resto_list__image" tabIndex="0">
                           <picture>
-                              <source media="(max-width: 600px)" srcset="https://restaurant-api.dicoding.dev/images/small/${item.pictureId}">
-                              <img class="lazyload" src="https://restaurant-api.dicoding.dev/images/small/${item.pictureId}" alt="image ${item.name}">
+                              <source media="(max-width: 600px)" data-srcset="https://restaurant-api.dicoding.dev/images/small/${item.pictureId}">
+                              <img class="lazyload" data-src="https://restaurant-api.dicoding.dev/images/small/${item.pictureId}" alt="image ${item.name}">
                           </picture>
                           </div>
                           <div class="menu_resto_list__city" tabIndex="0">

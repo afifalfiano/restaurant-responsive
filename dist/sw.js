@@ -7,11 +7,11 @@ var serviceWorkerOption = {
     "/favicon.ico",
     "/favicon.png",
     "/manifest.json",
-    "/images/heros/hero-image_2-min.jpg",
     "/icon/icon-192x192.png",
     "/icon/icon-256x256.png",
     "/icon/icon-384x384.png",
     "/icon/icon-512x512.png",
+    "/images/heros/hero-image_2-min.jpg",
     "/index.html"
   ]
 };

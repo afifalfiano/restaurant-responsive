@@ -17,7 +17,7 @@ const RestoDatabase = {
     return (await dbPromise).getAll(OBJECT_STORE_NAME);
   },
   async putResto(resto) {
-    return (await dbPromise).add(OBJECT_STORE_NAME, resto);
+    return (await dbPromise).put(OBJECT_STORE_NAME, resto);
   },
   async updateResto(resto) {
     return (await dbPromise).put(OBJECT_STORE_NAME, resto);
