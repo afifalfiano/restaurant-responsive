@@ -8,8 +8,8 @@ const Home = {
       <section>
           <div class="hero">
           <picture>
-              <source media="(max-width: 600px)" srcset="../images/heros/hero-image_2-min.jpg">
-              <img class="lazyload" src="../images/heros/hero-image_2-min.jpg" alt="Hero Images 2">
+              <source media="(max-width: 600px)" srcset="../images/hero-image-small.jpg">
+              <img class="lazyload" src="../images/hero-image-large.jpg" alt="Hero Images 2">
           </picture>
           </div>
           <div class="information">

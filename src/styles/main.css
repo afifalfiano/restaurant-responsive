@@ -659,14 +659,15 @@ footer p {
     }
     .information {
         text-align: center;
-        transform: translate(30%, 50%);
+        transform: translate(30%, 35%);
     }
+
     .information h1 {
-        font-size: 1.6em;
+        font-size: 2.6em;
     }
 
     .information h2 {
-        font-size: 1.4em;
+        font-size: 1.5em;
     }
 
     .information button {
@@ -740,6 +741,10 @@ footer p {
     }
 }
 
+@media only screen and (max-width: 425px) {
+    
+}
+
 @media only screen and (min-width: 426px) and (max-width: 561px) {
     header {
         align-items: center;
@@ -786,6 +791,14 @@ footer p {
         max-width: 320px;
     }
 
+    .image-restaurant span {
+        font-size: 16px;
+    }
+
+    .information {
+        transform: translate(30%, 20%);
+    }
+
     footer {
         max-width: 320px;
     }
@@ -795,7 +808,7 @@ footer p {
     }
 
     .image-restaurant p {
-        transform: translateY(-5px);
+        transform: translateY(-10px);
     }
 
 
