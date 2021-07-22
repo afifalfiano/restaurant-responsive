@@ -789,6 +789,21 @@ footer p {
 @media screen and (max-width: 320px) {
     .menus-resto {
         max-width: 320px;
+        margin: 10px;
+        flex-direction: column;
+    }
+
+    .food > p, .drink > p {
+        text-align: left;
+    }
+
+    .menus {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    
+    .food, .drink {
+        margin: 0 0 10px 0 !important;
     }
 
     .image-restaurant span {
